@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: object-detection-pod
+  labels:
+    app: object-detection
+spec:
+  containers:
+    - name: object-detection-container
+      image: 9381421553/project
+      ports:
+        - containerPort: 5000

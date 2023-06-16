@@ -5,10 +5,11 @@ import imutils
 from picamera.array import PiRGBArray
 from picamera import PiCamera
 
+# Configure camera settings
 camera = PiCamera()
-camera.resolution = (640, 480)
-camera.framerate = 24
-raw_capture = PiRGBArray(camera, size=(640, 480))
+camera.resolution = (320, 240)  # Decrease the resolution
+camera.framerate = 15  # Decrease the frame rate
+raw_capture = PiRGBArray(camera, size=(320, 240))
 
 server_url = 'http://192.168.21.159:9000/video_feed'
 
@@ -16,8 +17,10 @@ try:
     print('Connected to Cache Server.')
     for frame in camera.capture_continuous(raw_capture, format="bgr", use_video_port=True):
         image = frame.array
+
+        # Resize the frame
         image = imutils.resize(image, width=320)
-       
+
         # Convert the frame to JPEG format
         _, buffer = cv2.imencode('.jpg', image)
         frame_data = buffer.tobytes()

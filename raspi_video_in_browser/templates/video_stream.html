@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Video Stream</title>
+</head>
+<body>
+    <h1>Live Video Stream</h1>
+    <img id="video-stream" src="{{ url_for('video_feed') }}" width="640" height="480">
+   
+    <script>
+        const img = document.getElementById('video-stream');
+        setInterval(() => {
+            img.src = "{{ url_for('video_feed') }}?" + Date.now();
+        }, 1000);
+    </script>
+</body>
+</html>

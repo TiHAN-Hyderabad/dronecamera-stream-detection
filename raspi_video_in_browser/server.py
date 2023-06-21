@@ -8,6 +8,10 @@ app = Flask(__name__)
 current_frame = None
 model = YOLO("yolov5s.pt")
 
+# Specify the desired dimensions for the resized frames
+RESIZED_WIDTH = 640
+RESIZED_HEIGHT = 480
+
 @app.route('/')
 def home():
     return "Welcome to Video Streaming Server!!!"
@@ -19,8 +23,13 @@ def video_feed():
     frame_data = request.data
     frame = np.frombuffer(frame_data, np.uint8)
     img = cv2.imdecode(frame, cv2.IMREAD_COLOR)
-    # Process the frame here using the model or any other operations
-    # Example: processed_frame = model.detect(img)
+    
+    frame_width = int(request.headers['Frame-Width'])
+    frame_height = int(request.headers['Frame-Height'])
+
+    # Resize the frame to desired dimensions
+    img = cv2.resize(img, (RESIZED_WIDTH, RESIZED_HEIGHT))
+
 
     ret, buffer = cv2.imencode('.jpg', img)
     current_frame = buffer.tobytes()

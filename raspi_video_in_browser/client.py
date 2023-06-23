@@ -10,7 +10,7 @@ camera.resolution = (640, 480)
 camera.framerate = 24
 raw_capture = PiRGBArray(camera, size=(640, 480))
 
-server_url = 'http://192.168.21.159:9000/video_feed'
+server_url = 'http://192.168.21.159:8080/video_feed'
 
 try:
     print('Connected to Cache Server.')

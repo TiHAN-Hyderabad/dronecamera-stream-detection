@@ -1,20 +1,25 @@
-# Use the official Ubuntu image as the base image
+# Use the official Ubuntu base image
 FROM ubuntu
 
 # Set the working directory in the container
 WORKDIR /app
 
-# Install required system dependencies
-RUN apt-get update && apt-get install -y python3 python3-pip libgl1-mesa-glx
+COPY Dockerfile /app/Dockerfile
 
-# Copy the requirements.txt file to the container
+# Update package lists and install necessary dependencies
+RUN apt update && apt install python3-pip -y && apt install ffmpeg -y
+
+# Copy the requirements file
 COPY requirements.txt .
 
 # Install the Python dependencies
 RUN pip3 install --no-cache-dir -r requirements.txt
 
-# Copy the server.py file to the container
+# Copy the server code into the container
 COPY server.py .
 
-# Run the server.py script when the container starts
+# Expose the server port
+EXPOSE 8080
+
+# Run the server
 CMD ["python3", "server.py"]

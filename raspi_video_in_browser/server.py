@@ -1,16 +1,20 @@
 import cv2
 import numpy as np
 from flask import Flask, request
+import requests
 import threading
 from ultralytics import YOLO
 
 app = Flask(__name__)
-frame_file = 'processed_frame.jpg'  # File to store the processed frame
-model = YOLO("yolov5s.pt")  # Create the YOLO model
+frame_url = 'http://192.168.252.225:8081/get_frame'  # URL of the display server's get_frame endpoint
 
 # Specify the desired dimensions for the resized frames
 RESIZED_WIDTH = 1200
 RESIZED_HEIGHT = 800
+model = YOLO("yolov5s.pt")  # Create the YOLO model
+
+def send_frame(frame):
+    requests.post(frame_url, data=frame, headers={'Content-Type': 'image/jpeg'})
 
 @app.route('/')
 def home():
@@ -28,6 +32,7 @@ def video_feed():
     img = cv2.resize(img, (RESIZED_WIDTH, RESIZED_HEIGHT))
 
     # Perform object detection on the frame
+    # (your object detection code here)
     results = model.predict(img)
     for result in results:
         for obj in result.boxes:
@@ -38,18 +43,15 @@ def video_feed():
             cv2.rectangle(img, (x1, y1), (x2, y2), (0, 255, 0), 2)
             cv2.putText(img, f'{label}: {confidence:.2f}', (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 255, 0), 2)
 
-    cv2.imwrite(frame_file, img)  # Save the processed frame to a file
 
-    return "Video frame received."
+    ret, buffer = cv2.imencode('.jpg', img)
+    frame_data = buffer.tobytes()
+    threading.Thread(target=send_frame, args=(frame_data,)).start()
 
-def process_frame():
-    while True:
-        key = cv2.waitKey(1) & 0xFF
-        if key == ord('q'):
-            break
+    return "Frame processed."
 
-    cv2.destroyAllWindows()
+def run_processing_server():
+    app.run(host='0.0.0.0', port=8080)
 
 if __name__ == '__main__':
-    threading.Thread(target=process_frame).start()
-    app.run(host='0.0.0.0', port=8080)
+    threading.Thread(target=run_processing_server).start()

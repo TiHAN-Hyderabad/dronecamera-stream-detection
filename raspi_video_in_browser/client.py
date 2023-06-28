@@ -11,6 +11,7 @@ camera.framerate = 24
 raw_capture = PiRGBArray(camera, size=(640, 480))
 
 server_url = 'http://192.168.21.159:8080/video_feed'
+frames_sent = 0
 
 try:
     print('Connected to Cache Server.')
@@ -30,6 +31,7 @@ try:
         }
         response = requests.post(server_url, data=frame_data, headers=headers)
         print('Frame sent to server:', response.status_code)
+        frames_sent += 1
 
         cv2.imshow("TRANSMITTING TO CACHE SERVER", image)
 
@@ -42,3 +44,5 @@ except Exception as e:
 finally:
     camera.close()
     cv2.destroyAllWindows()
+
+print("Frames sent to server:", frames_sent)

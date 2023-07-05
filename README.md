@@ -14,7 +14,6 @@ dev
 - Expose that object detected live video to the browser when browser enter the url.
 # Step-3:
 - End user enters the port url in browser then object detected video is displayed in browser which is sent by server.
-=======
 # Architecture diagram
 
 ![Untitled Diagram](https://github.com/TiHAN-Hyderabad/dronecamera-stream-detection/assets/94279266/c34ce4f9-2a8d-4b17-8f0b-27be77b86e8c)

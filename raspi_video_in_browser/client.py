@@ -12,6 +12,8 @@ raw_capture = PiRGBArray(camera, size=(640, 480))
 
 server_url = 'http://host_ip:port/video_feed' # Replace server host_ip and port
 
+frames_sent_to_server = 0
+
 try:
     print('Connected to Cache Server.')
     for frame in camera.capture_continuous(raw_capture, format="bgr", use_video_port=True):
@@ -31,6 +33,11 @@ try:
         response = requests.post(server_url, data=frame_data, headers=headers)
         print('Frame sent to server:', response.status_code)
 
+        frames_sent_to_server += 1
+
+        # Print frame count for each frame
+        print("Frame count:", frames_sent_to_server)
+
         cv2.imshow("TRANSMITTING TO CACHE SERVER", image)
 
         key = cv2.waitKey(1) & 0xFF
@@ -42,3 +49,5 @@ except Exception as e:
 finally:
     camera.close()
     cv2.destroyAllWindows()
+
+print("Frames sent to server:", frames_sent_to_server)

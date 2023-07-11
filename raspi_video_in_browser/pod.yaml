@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
         - name: video-stream-server
-          image: 9381421553/server-image
+          image: 9381421553/image1
           ports:
             - containerPort: 8080
 ---

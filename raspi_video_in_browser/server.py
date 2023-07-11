@@ -3,12 +3,14 @@ import numpy as np
 from flask import Flask, Response, request
 import threading
 from ultralytics import YOLO
+import time
+import datetime
 
 app = Flask(__name__)
 current_frame = None
 frame_count_client = 0
 frame_count_server = 0
-model = YOLO("yolov5s.pt")  # Create the YOLO model
+model = YOLO("yolov5s.pt")
 
 # Specify the desired dimensions for the resized frames
 RESIZED_WIDTH = 1200
@@ -28,16 +30,26 @@ def video_feed():
         frame_width = int(request.headers['Frame-Width'])
         frame_height = int(request.headers['Frame-Height'])
 
-        # Resize the frame to desired dimensions
+        client_timestamp = float(request.headers['Client-Timestamp'])
+        server_to_client_delay = time.time() - client_timestamp
+        print('Delay time (client to server):', server_to_client_delay)
+
         img = cv2.resize(img, (RESIZED_WIDTH, RESIZED_HEIGHT))
 
-        # Perform object detection on the frame
+        start_time = time.time()
         results = model.predict(img)
+        end_time = time.time()
+        processing_delay = end_time - start_time
+        print('Processing delay:', processing_delay)
+
+        current_time = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f')
+        print('Frame received by server at:', current_time)
+
         for result in results:
             for obj in result.boxes:
-                x1, y1, x2, y2 = map(int, obj.xyxy[0])  # Convert coordinates to integers
-                label = result.names[int(obj.cls[0])]  # Get the class label
-                confidence = obj.conf[0]  # Get the confidence score
+                x1, y1, x2, y2 = map(int, obj.xyxy[0])
+                label = result.names[int(obj.cls[0])]
+                confidence = obj.conf[0]
 
                 cv2.rectangle(img, (x1, y1), (x2, y2), (0, 255, 0), 2)
                 cv2.putText(img, f'{label}: {confidence:.2f}', (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 255, 0), 2)
@@ -48,6 +60,13 @@ def video_feed():
         frame_count_server += 1
         print("Received frame from client. Total frames received:", frame_count_client)
         print("Total frames processed:", frame_count_server)
+
+        server_timestamp = time.time()
+        server_to_browser_delay = server_timestamp - client_timestamp
+        print('Delay time (server to browser URL):', server_to_browser_delay)
+
+        current_time = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f')
+        print('Frame sent to browser at:', current_time)
 
         return "Video frame received."
     else:

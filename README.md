@@ -84,6 +84,10 @@ The client code captures frames, resizes them, encodes them in JPEG format, and 
 
 ### Screenshots
 
+This is the demo streaming video:
+https://github.com/TiHAN-Hyderabad/dronecamera-stream-detection/assets/94279266/f02c4b47-5aa0-482c-ac4a-6aa9a528bc2f
+This is the screenshot of logs of server pod:
+![Screenshot from 2023-07-05 11-43-10](https://github.com/TiHAN-Hyderabad/dronecamera-stream-detection/assets/94279266/ac92e995-b95e-4e32-9124-33376978bb2d)
 
 
 ### Resources 

@@ -82,3 +82,12 @@ The client code captures frames, resizes them, encodes them in JPEG format, and 
 * Deployed .yaml script in kubernetes dashboard for the pod to run.
 * After successful running of pod start the client code and open the url in browser.
 
+
+### Resources 
+* https://youtu.be/Az1MH_e1hVA - to display video in browser
+* https://github.com/ultralytics/yolov5 - to understand and use yolov5 model
+* https://youtu.be/9BnubSbXnRM - to use Flask API
+
+
+
+

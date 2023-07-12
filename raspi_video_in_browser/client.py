@@ -44,7 +44,7 @@ try:
         current_time = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f')
         print('Frame sent by client at:', current_time)
 
-        cv2.imshow("TRANSMITTING TO CACHE SERVER", image)
+        #cv2.imshow("TRANSMITTING TO CACHE SERVER", image)
 
         key = cv2.waitKey(1) & 0xFF
         raw_capture.truncate(0)

@@ -25,6 +25,9 @@ The main objective of the project is to create a system that enables streaming l
 
 The client code captures frames, resizes them, encodes them in JPEG format, and sends them to the server using HTTP POST requests. The server code receives the frames, decodes them, resizes them to a desired dimension, and performs object detection on the frames using the YOLO model. Detected objects are then annotated on the frames. The annotated frames are made available as a continuous video stream for viewing.
 
+### Raspberry pi configuration
+* Model: Raspberry-pi-4
+
 ### How the entire code works?
 #### (1) Start the Server:
 * The server code should be executed first.

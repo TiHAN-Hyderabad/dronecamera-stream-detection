@@ -75,7 +75,7 @@ The client code captures frames, resizes them, encodes them in JPEG format, and 
 * The server code then destroys OpenCV windows and terminates.
 
 ### Deploying pod in kubernetes dashboard:
-* Created docker image for server – 9381421553/server-image.
+* Created docker image for server – 9381421553/image1.
 * Deployed .yaml script in kubernetes dashboard for the pod to run.
 * After successful running of pod start the client code and open the url in browser.
 

@@ -82,6 +82,9 @@ The client code captures frames, resizes them, encodes them in JPEG format, and 
 * Deployed .yaml script in kubernetes dashboard for the pod to run.
 * After successful running of pod start the client code and open the url in browser.
 
+### Screenshots
+
+
 
 ### Resources 
 * https://youtu.be/Az1MH_e1hVA - to display video in browser

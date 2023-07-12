@@ -88,6 +88,25 @@ The client code captures frames, resizes them, encodes them in JPEG format, and 
 * https://github.com/ultralytics/yolov5 - to understand and use yolov5 model
 * https://youtu.be/9BnubSbXnRM - to use Flask API
 
+### Testing
 
+#### Test-1:
+* In this I kept drone and server at same place and did testing.Here I used only CPU in .yaml script.The results I got:
+  - [ ] At first frame:
+  * Delay from client to server: 0.027099
+  * Delay from server to browser url: 0.015
+  - [ ] At last frame:
+  * Delay from client to server: 0.019686
+  * Delay from server to browser url: 0.016348
+* Here client sent 267 frames in 49.264599 seconds, so 5.419 frames per second approximately.
+#### Test-2:
+* In this I kept drone at 5 meters from server and did testing.Here also I used only CPU in .yaml script.The results I got:
+  - [ ] At first frame:
+  * Delay from client to server: 0.160655
+  * Delay from server to browser url: 0.016859
+  - [ ] At last frame:
+  * Delay from client to server: 0.136318
+  * Delay from server to browser url: 0.0161
+* Here client sent 273 frames in 51.873947 seconds, so 5.26 frames per second approximately.
 
-
+  

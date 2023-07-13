@@ -115,5 +115,14 @@ https://github.com/TiHAN-Hyderabad/dronecamera-stream-detection/assets/94279266/
   * Delay from client to server: 0.136318
   * Delay from server to browser url: 0.0161
 * Here client sent 273 frames in 51.873947 seconds, so 5.26 frames per second approximately.
+#### Test-3:
+* In this I kept objects at 10 meters from drone and did testing.The results I got:
+  - [ ] At first frame:
+  * Delay from client to server: 0.203943
+  * Delay from server to browser url: 0.021099
+  - [ ] At last frame:
+  * Delay from client to server: 5.662186
+  * Delay from server to browser url: 0.016122
+* Here client sent 347 frames in  15 seconds, so 23.2 frames per second approximately.
 
   

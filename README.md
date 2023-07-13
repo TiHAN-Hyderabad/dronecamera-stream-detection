@@ -96,9 +96,9 @@ https://github.com/TiHAN-Hyderabad/dronecamera-stream-detection/assets/94279266/
 * https://youtu.be/9BnubSbXnRM - to use Flask API
 
 ### Testing
-
+#### I did testing using CPU only.
 #### Test-1:
-* In this I kept drone and server at same place and did testing.Here I used only CPU in .yaml script.The results I got:
+* In this I kept drone and server at same place and did testing.The results I got:
   - [ ] At first frame:
   * Delay from client to server: 0.027099
   * Delay from server to browser url: 0.015
@@ -107,7 +107,7 @@ https://github.com/TiHAN-Hyderabad/dronecamera-stream-detection/assets/94279266/
   * Delay from server to browser url: 0.016348
 * Here client sent 267 frames in 49.264599 seconds, so 5.419 frames per second approximately.
 #### Test-2:
-* In this I kept drone at 5 meters from server and did testing.Here also I used only CPU in .yaml script.The results I got:
+* In this I kept drone at 5 meters from server and did testing.The results I got:
   - [ ] At first frame:
   * Delay from client to server: 0.160655
   * Delay from server to browser url: 0.016859

@@ -125,4 +125,49 @@ https://github.com/TiHAN-Hyderabad/dronecamera-stream-detection/assets/94279266/
   * Delay from server to browser url: 0.016122
 * Here client sent 347 frames in  15 seconds, so 23.2 frames per second approximately.
 
+#### I did testing using GPU.
+#### Test-1 :
+* In this I kept objects at less than 1meter distance and did testing.The results I got:
+* Network speed : 50 Mbps
+  - [ ] At first frame:
+  * Delay from client to server: 0.027099
+  * Delay from server to browser url: 0.015
+  - [ ] At last frame:
+  * Delay from client to server: 0.019686
+  * Delay from server to browser url: 0.016348
+* Here client sent 225 frames in  61.457714 seconds, so 3.66 frames per second approximately.
+#### Test-2 :
+* In this I kept objects at 5 meters from drone and did testing.Here also I used only CPU in .yaml script.The results I got:
+* Network speed : 100 Mbps
+  - [ ] At first frame:
+  * Delay from client to server: 0.160655
+  * Delay from server to browser url: 0.016859
+  - [ ] At last frame:
+  * Delay from client to server: 0.136318
+  * Delay from server to browser url: 0.0161
+* Here client sent 280 frames in 31.99 seconds, so 8.75 frames per second approximately.
+#### Test-3 (objects are at 10 meters away from drone):
+* Network speed : 70 Mbps
+* In this I kept objects at 10 meters from drone and did testing.The results I got:
+  - [ ] At first frame:
+  * Delay from client to server: 0.102356
+  * Delay from server to browser url: 0.014856
+  - [ ] At last frame:
+  * Delay from client to server: 0.031748
+  * Delay from server to browser url: 0.010426
+* Here client sent 1269 frames in  240 seconds, so 5.28 frames per second approximately.
+#### Test-4 (During flying):
+* Network speed : 70 Mbps
+  - [ ] At first frame:
+  * Delay from client to server: 0.049506
+  * Delay from server to browser url: 0.015341
+  - [ ] At last frame:
+  * Delay from client to server: 0.049857
+  * Delay from server to browser url: 0.015336
+* Here client sent 561 frames in  230 seconds, so 2.5 frames per second approximately.
+
+
+
+
+
   

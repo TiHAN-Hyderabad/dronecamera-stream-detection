@@ -133,9 +133,11 @@ https://github.com/TiHAN-Hyderabad/dronecamera-stream-detection/assets/94279266/
   - [ ] At first frame:
   * Delay from client to server: 0.027099
   * Delay from server to browser url: 0.015
+  * Delay from client to browser url: 0.042099
   - [ ] At last frame:
   * Delay from client to server: 0.019686
   * Delay from server to browser url: 0.016348
+  * Delay from client to browser url: 0.036034
 * Here client sent 225 frames in  61.457714 seconds, so 3.66 frames per second approximately.
 #### Test-2 :
 * In this I kept objects at 5 meters from drone and did testing.Here also I used only CPU in .yaml script.The results I got:
@@ -143,9 +145,11 @@ https://github.com/TiHAN-Hyderabad/dronecamera-stream-detection/assets/94279266/
   - [ ] At first frame:
   * Delay from client to server: 0.160655
   * Delay from server to browser url: 0.016859
+  * Delay from client to browser url: 0.177514
   - [ ] At last frame:
   * Delay from client to server: 0.136318
-  * Delay from server to browser url: 0.0161
+  * Delay from server to browser url: 0.016165
+  * Delay from client to browser url: 0.152483
 * Here client sent 280 frames in 31.99 seconds, so 8.75 frames per second approximately.
 #### Test-3 (objects are at 10 meters away from drone):
 * Network speed : 70 Mbps
@@ -153,19 +157,27 @@ https://github.com/TiHAN-Hyderabad/dronecamera-stream-detection/assets/94279266/
   - [ ] At first frame:
   * Delay from client to server: 0.102356
   * Delay from server to browser url: 0.014856
+  * Delay from client to browser url: 0.117212
   - [ ] At last frame:
   * Delay from client to server: 0.031748
   * Delay from server to browser url: 0.010426
+  * Delay from client to browser url: 0.042174
 * Here client sent 1269 frames in  240 seconds, so 5.28 frames per second approximately.
 #### Test-4 (During flying):
-* Network speed : 50 Mbps
+* Network speed : 70 Mbps
   - [ ] At first frame:
   * Delay from client to server: 0.049506
   * Delay from server to browser url: 0.015341
+  *  Delay from client to browser url: 0.064847
   - [ ] At last frame:
   * Delay from client to server: 0.049857
   * Delay from server to browser url: 0.015336
+  *  Delay from client to browser url: 0.065193
 * Here client sent 561 frames in  230 seconds, so 2.5 frames per second approximately.
+
+
+
+
 
 #### Further changes to be done:
 * As I used yolov5 pre-trained model it was detecting only 80 classes present in it.So we have to train that model with the labels we want.

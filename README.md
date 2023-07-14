@@ -100,28 +100,28 @@ https://github.com/TiHAN-Hyderabad/dronecamera-stream-detection/assets/94279266/
 #### I did testing using CPU only.
 #### Test-1:
 * In this I kept drone and server at same place and did testing.The results I got:
-  - [ ] At first frame:
+  - [ ] At first frame(Delay in seconds):
   * Delay from client to server: 0.027099
   * Delay from server to browser url: 0.015
-  - [ ] At last frame:
+  - [ ] At last frame(Delay in seconds):
   * Delay from client to server: 0.019686
   * Delay from server to browser url: 0.016348
 * Here client sent 267 frames in 49.264599 seconds, so 5.419 frames per second approximately.
 #### Test-2:
 * In this I kept drone at 5 meters from server and did testing.The results I got:
-  - [ ] At first frame:
+  - [ ] At first frame(Delay in seconds):
   * Delay from client to server: 0.160655
   * Delay from server to browser url: 0.016859
-  - [ ] At last frame:
+  - [ ] At last frame(Delay in seconds):
   * Delay from client to server: 0.136318
   * Delay from server to browser url: 0.0161
 * Here client sent 273 frames in 51.873947 seconds, so 5.26 frames per second approximately.
 #### Test-3:
 * In this I kept objects at 10 meters from drone and did testing.The results I got:
-  - [ ] At first frame:
+  - [ ] At first frame(Delay in seconds):
   * Delay from client to server: 0.203943
   * Delay from server to browser url: 0.021099
-  - [ ] At last frame:
+  - [ ] At last frame(Delay in seconds):
   * Delay from client to server: 5.662186
   * Delay from server to browser url: 0.016122
 * Here client sent 347 frames in  15 seconds, so 23.2 frames per second approximately.
@@ -130,11 +130,11 @@ https://github.com/TiHAN-Hyderabad/dronecamera-stream-detection/assets/94279266/
 #### Test-1 :
 * In this I kept objects at less than 1meter distance and did testing.The results I got:
 * Network speed : 50 Mbps
-  - [ ] At first frame:
+  - [ ] At first frame(Delay in seconds):
   * Delay from client to server: 0.027099
   * Delay from server to browser url: 0.015
   * Delay from client to browser url: 0.042099
-  - [ ] At last frame:
+  - [ ] At last frame(Delay in seconds):
   * Delay from client to server: 0.019686
   * Delay from server to browser url: 0.016348
   * Delay from client to browser url: 0.036034
@@ -142,11 +142,11 @@ https://github.com/TiHAN-Hyderabad/dronecamera-stream-detection/assets/94279266/
 #### Test-2 :
 * In this I kept objects at 5 meters from drone and did testing.Here also I used only CPU in .yaml script.The results I got:
 * Network speed : 100 Mbps
-  - [ ] At first frame:
+  - [ ] At first frame(Delay in seconds):
   * Delay from client to server: 0.160655
   * Delay from server to browser url: 0.016859
   * Delay from client to browser url: 0.177514
-  - [ ] At last frame:
+  - [ ] At last frame(Delay in seconds):
   * Delay from client to server: 0.136318
   * Delay from server to browser url: 0.016165
   * Delay from client to browser url: 0.152483
@@ -154,22 +154,22 @@ https://github.com/TiHAN-Hyderabad/dronecamera-stream-detection/assets/94279266/
 #### Test-3 (objects are at 10 meters away from drone):
 * Network speed : 70 Mbps
 * In this I kept objects at 10 meters from drone and did testing.The results I got:
-  - [ ] At first frame:
+  - [ ] At first frame(Delay in seconds):
   * Delay from client to server: 0.102356
   * Delay from server to browser url: 0.014856
   * Delay from client to browser url: 0.117212
-  - [ ] At last frame:
+  - [ ] At last frame(Delay in seconds):
   * Delay from client to server: 0.031748
   * Delay from server to browser url: 0.010426
   * Delay from client to browser url: 0.042174
 * Here client sent 1269 frames in  240 seconds, so 5.28 frames per second approximately.
 #### Test-4 (During flying):
 * Network speed : 70 Mbps
-  - [ ] At first frame:
+  - [ ] At first frame(Delay in seconds):
   * Delay from client to server: 0.049506
   * Delay from server to browser url: 0.015341
   *  Delay from client to browser url: 0.064847
-  - [ ] At last frame:
+  - [ ] At last frame(Delay in seconds):
   * Delay from client to server: 0.049857
   * Delay from server to browser url: 0.015336
   *  Delay from client to browser url: 0.065193

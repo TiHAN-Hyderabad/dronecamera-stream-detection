@@ -158,7 +158,7 @@ https://github.com/TiHAN-Hyderabad/dronecamera-stream-detection/assets/94279266/
   * Delay from server to browser url: 0.010426
 * Here client sent 1269 frames in  240 seconds, so 5.28 frames per second approximately.
 #### Test-4 (During flying):
-* Network speed : 70 Mbps
+* Network speed : 50 Mbps
   - [ ] At first frame:
   * Delay from client to server: 0.049506
   * Delay from server to browser url: 0.015341

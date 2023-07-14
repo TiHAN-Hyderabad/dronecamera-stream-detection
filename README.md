@@ -21,7 +21,7 @@ dev
 
 # Documentation
 
-The main objective of the project is to create a system that enables streaming live video from a drone camera to a server for real-time object detection. The client code represents the drone camera module, which captures frames using the PiCamera. It continuously sends these frames to the server code.
+The main objective of the project is to create a system that enables live video streaming from a drone camera to a server for real-time object detection. The client code represents the drone camera module, which captures frames using the PiCamera. It continuously sends these frames to the server code.
 
 The client code captures frames, resizes them, encodes them in JPEG format, and sends them to the server using HTTP POST requests. The server code receives the frames, decodes them, resizes them to a desired dimension, and performs object detection on the frames using the YOLO model. Detected objects are then annotated on the frames. The annotated frames are made available as a continuous video stream for viewing.
 
@@ -174,10 +174,6 @@ https://github.com/TiHAN-Hyderabad/dronecamera-stream-detection/assets/94279266/
   * Delay from server to browser url: 0.015336
   *  Delay from client to browser url: 0.065193
 * Here client sent 561 frames in  230 seconds, so 2.5 frames per second approximately.
-
-
-
-
 
 #### Further changes to be done:
 * As I used yolov5 pre-trained model it was detecting only 80 classes present in it.So we have to train that model with the labels we want.

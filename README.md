@@ -167,6 +167,11 @@ https://github.com/TiHAN-Hyderabad/dronecamera-stream-detection/assets/94279266/
   * Delay from server to browser url: 0.015336
 * Here client sent 561 frames in  230 seconds, so 2.5 frames per second approximately.
 
+#### Further changes to be done:
+* As I used yolov5 pre-trained model it was detecting only 80 classes present in it.So we have to train that model with the labels we want.
+* When the network is slow frame rate per second is varying. Network speed is directly proportional to frame rate per second.
+* As we have advanced cameras compared to raspberry pi, we can use them for better resolution and quality of video.
+
 
 
 

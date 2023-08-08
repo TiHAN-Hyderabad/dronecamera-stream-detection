@@ -11,7 +11,8 @@ camera.resolution = (640, 480)
 camera.framerate = 24
 raw_capture = PiRGBArray(camera, size=(640, 480))
 
-server_url = 'http://192.168.103.220:8080/video_feed'
+#TiE-API
+server_url = 'http://edge.tihan.iith.ac.in:30020/video_feed'
 
 frames_sent_to_server = 0
 

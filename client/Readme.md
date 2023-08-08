@@ -1,0 +1,1 @@
+- Please copy this client.py file to the drone to start the stream.

@@ -1,19 +1,36 @@
-# dronecamera-stream-detection
-Detect objects using from drone camera streamed to kubernetes
+# Drone Camera Stream Detection
 
-https://stackoverflow.com/questions/48611517/raspberry-pi-3-python-and-opencv-face-recognition-from-network-camera-stream
-https://www.youtube.com/watch?v=sYGdge3T30o
+Detect objects using drone camera or any UAV with raspi installed, by streaming its video output to TiE and visualise the detected objects in real time with bounding boxes, confidence in browser. 
 
-dev
+-  Client = Drone
+-  Server = TiE
+
+# Video is streamed from Drone Camera
+
+![WhatsApp Image 2023-08-08 at 20 52 29](https://github.com/TiHAN-Hyderabad/dronecamera-stream-detection/assets/40199249/fee9a12b-60d4-4995-a887-cc31ab4b0416)
+
+
+
+## Real time Video in the browser 
+  - visit http://edge.tihan.iith.ac.in:30020/video_feed
+
+ <img width="1370" alt="image" src="https://github.com/TiHAN-Hyderabad/dronecamera-stream-detection/assets/40199249/9bea3ea6-d5c2-49b6-8c49-dc6dc24f44df">
+
+
+ ## Video
+https://github.com/TiHAN-Hyderabad/dronecamera-stream-detection/assets/40199249/3c78ac32-e4ff-4fe9-86b0-eaa7c8d3003e
+
+
+
 # Steps of execution
 ### Step-1:
-- Server send the requests to client
-- Client send live video capturing by raspi camera as a response to server
+- Copy the client.py file to the raspberry pi and give tihan edge API
+- Client sends live video captured by raspi camera as a response to server
 ### Step-2:
-- Server get that live video stream and do the object detection.
-- Expose that object detected live video to the browser when browser enter the url.
-### Step-3:
-- End user enters the port url in browser then object detected video is displayed in browser which is sent by server.
+- Server performs the object detection using yolov5 on the input stream and publishes it to http://edge.tihan.iith.ac.in:30020/video_feed.
+
+Please check http://edge.tihan.iith.ac.in:30020/video_feed for the real time object detection stream with bounding boxes and confidence
+
 # Architecture diagram
 
 ![Untitled Diagram](https://github.com/TiHAN-Hyderabad/dronecamera-stream-detection/assets/94279266/c34ce4f9-2a8d-4b17-8f0b-27be77b86e8c)
@@ -183,5 +200,8 @@ https://github.com/TiHAN-Hyderabad/dronecamera-stream-detection/assets/94279266/
 
 
 
+## Reference:
+https://stackoverflow.com/questions/48611517/raspberry-pi-3-python-and-opencv-face-recognition-from-network-camera-stream
+https://www.youtube.com/watch?v=sYGdge3T30o
 
   

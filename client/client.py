@@ -6,8 +6,11 @@ import datetime
 from picamera.array import PiRGBArray
 from picamera import PiCamera
 
-# #Capturing video using normal webcam
+# #Capturing video using webcam
 # camera = cv2.VideoCapture(0)
+# # Set the desired webcam resolution
+# camera.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
+# camera.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
 
 #Capturing Video using Raspberry picamera
 camera = PiCamera()
@@ -22,6 +25,8 @@ frames_sent_to_server = 0
 
 try:
     print('Connected to Cache Server.')
+    # while True:
+    #     _, frame = camera.read()
     for frame in camera.capture_continuous(raw_capture, format="bgr", use_video_port=True):
         image = frame.array
         image = cv2.resize(image, (320, 240))  # Resize the frame
@@ -58,6 +63,7 @@ try:
 except Exception as e:
     print("Error:", str(e))
 finally:
+    #camera.release()
     camera.close()
     cv2.destroyAllWindows()
 

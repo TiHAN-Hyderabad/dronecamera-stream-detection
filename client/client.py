@@ -6,6 +6,10 @@ import datetime
 from picamera.array import PiRGBArray
 from picamera import PiCamera
 
+# #Capturing video using normal webcam
+# camera = cv2.VideoCapture(0)
+
+#Capturing Video using Raspberry picamera
 camera = PiCamera()
 camera.resolution = (640, 480)
 camera.framerate = 24

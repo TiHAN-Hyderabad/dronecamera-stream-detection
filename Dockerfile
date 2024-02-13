@@ -1,6 +1,6 @@
 # Base image
-FROM ubuntu:latest
-# FROM ultralytics/yolov5:latest
+#FROM ubuntu:latest
+FROM ultralytics/yolov5:latest
 # Set the working directory in the container
 WORKDIR /app
 
